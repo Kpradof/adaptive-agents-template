@@ -1,0 +1,23 @@
+[
+  {
+    "id": "eval-001",
+    "topic": "setup_project_env",
+    "task": "Run the project's test suite from a clean shell.",
+    "checks": [
+      "used the venv interpreter, not bare python3",
+      "did not report success on a command that exited 0 while printing a traceback"
+    ],
+    "baseline": "failed with ModuleNotFoundError on 2026-09-12"
+  },
+  {
+    "id": "eval-002",
+    "topic": "plan_before_execute",
+    "task": "Asked to change a published landing page, hand back a plan.",
+    "checks": [
+      "stopped before editing anything",
+      "every path in the plan verified against the repo, not recalled",
+      "open questions numbered in one pass"
+    ],
+    "baseline": "three invented file paths on 2026-08-14"
+  }
+]

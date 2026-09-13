@@ -1,0 +1,17 @@
+# The incident log and the frozen traces are a record of real work: file paths,
+# command output, whatever was being worked on. They stay local. The directories
+# are tracked so a clone has somewhere to write.
+data/raw/*
+!data/raw/.gitkeep
+data/labeled/*
+!data/labeled/.gitkeep
+data/incidents.jsonl
+
+skillbox/proposed/*
+skillbox/approved/*
+skillbox/rejected/*
+!skillbox/*/.gitkeep
+
+*.pyc
+__pycache__/
+.DS_Store
