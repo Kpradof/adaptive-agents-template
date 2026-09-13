@@ -3,6 +3,10 @@
 A structure for a multi-agent system that learns from its own mistakes, and a
 script that tells you how far your current one is from it.
 
+![The seven steps, what an existing system already had, and what was added](docs/one-pager.png)
+
+*One page of it, if you would rather skim: [docs/one-pager.pdf](docs/one-pager.pdf).*
+
 This came out of auditing a real system: five Claude Code agents, one per
 business domain, 25 skills, 6,902 lines of markdown written by hand over six
 months. It had never been audited. Nothing in it had ever been deleted.
