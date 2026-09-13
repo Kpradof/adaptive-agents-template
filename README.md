@@ -126,8 +126,6 @@ shared/
 skills/
   <name>/SKILL.md            a procedure, loaded on demand by a routing table
 data/
-  incidents.jsonl            append-only failure log, written by the hook as
-                             failures happen. gitignored.
   raw/                       frozen transcripts, for auditing a system that had
                              no log running yet. gitignored.
 evals/
@@ -135,7 +133,12 @@ evals/
 skillbox/
   proposed/ approved/ rejected/
 hooks/
-  record-failure.sh          01  logs every failure the moment it happens
+  record-failure.sh          01  logs every failure the moment it happens, to
+                                 ~/.claude/incidents.jsonl. It fires from
+                                 whatever directory the agent is working in, so
+                                 the log lives at a fixed path rather than in
+                                 this repo. Set INCIDENTS_LOG to move it; the
+                                 reading scripts follow the same variable.
   block-generated-agents.sh  05  refuses edits to a generated agent file
 skills/
   induce-rules/              03  clusters into proposed rules, for approval
@@ -145,8 +148,10 @@ scripts/
   seed_rules.py              07  seeds RULES.md from rules already written
   audit_structure.py         05 07  the gap audit, no traces needed
   build_agents.py            05  assemble each agent from its source + shared
-  snapshot_traces.py         01  fallback: freeze transcripts on a system with
-                                 no log running yet
+  snapshot_traces.py         01  fallback: freeze transcripts on a system that
+                                 had no log running yet
+  to_episodes.py             02  fallback: turn those transcripts into episodes,
+                                 for auditing a past the hook never saw
 RULES.md                     every rule: when added, from which failure, when
                              last confirmed useful
 ```

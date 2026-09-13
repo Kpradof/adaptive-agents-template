@@ -78,10 +78,12 @@ adaptive-agents/
 What each addition buys, by step:
 
 **01 Capture** is `hooks/record-failure.sh`. It fires on `PostToolUseFailure` and
-writes the failure to `data/incidents.jsonl` with its command and output, at the
-moment it happens. The harness deletes its own transcripts, so a log the system
-owns is the only copy that survives; and recording at the moment of failure keeps
-the context that mining later throws away.
+writes the failure, with its command and output, to `~/.claude/incidents.jsonl`
+at the moment it happens. The path is fixed rather than inside this repo because
+the hook fires from whatever directory the agent is working in. Transcripts get
+deleted by the tool that wrote them, so a log the system owns is the only copy
+that survives, and recording at the moment of failure keeps the context that
+mining later throws away.
 
 **02 Detect** is `cluster_incidents.py`. It groups the log by the shape of the
 failure, so three missing packages with three names read as one wrong
