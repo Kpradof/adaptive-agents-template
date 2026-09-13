@@ -8,8 +8,8 @@ script that tells you how far your current one is from it.
 *One page of it, if you would rather skim: [docs/one-pager.pdf](docs/one-pager.pdf).*
 
 This came out of auditing a real system: five Claude Code agents, one per
-business domain, 25 skills, 6,902 lines of markdown written by hand over six
-months. It had never been audited. Nothing in it had ever been deleted.
+business domain, 25 skills, 6,923 lines of markdown written by hand over
+almost a year. It had never been audited. Nothing in it had ever been deleted.
 
 ---
 
